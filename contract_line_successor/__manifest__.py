@@ -3,7 +3,7 @@
 
 {
     "name": "Contract Line Successor",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.1",
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/contract",
@@ -12,13 +12,13 @@
     "maintainers": ["sbejaoui"],
     "data": [
         "data/contract_renew_cron.xml",
-        "security/ir.model.access.csv",
         "views/contract_template.xml",
         "views/contract_contract.xml",
         "views/contract_template_line.xml",
         "views/contract_line.xml",
         "wizards/contract_line_wizard.xml",
         "views/res_config_settings.xml",
+        'security/ir.access.csv',
     ],
     "demo": [],
 }
