@@ -7,6 +7,10 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestContractLine(BaseCommon):
+    # Odoo 20: BaseCommon runs test methods as a limited test user by
+    # default; these tests were written for the superuser environment.
+    _test_user_groups = ()
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
