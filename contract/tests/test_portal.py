@@ -10,6 +10,11 @@ from odoo.addons.base.tests.common import BaseCommon
 
 @tagged("post_install", "-at_install")
 class TestContractPortal(HttpCase, BaseCommon):
+    # Odoo 20: BaseCommon runs test methods as a limited test user by
+    # default; these tests set up companies, pricelists and users themselves
+    # and were written for the superuser environment of previous versions.
+    _test_user_groups = ()
+
     @mute_logger(
         "odoo.addons.contract.tests.test_portal.TestContractPortal.test_tour.browser"
     )

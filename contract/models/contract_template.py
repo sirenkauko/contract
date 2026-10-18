@@ -33,7 +33,7 @@ class ContractTemplate(models.Model):
         required=True,
         default=lambda self: self.env.company,
     )
-    pricelist_id_domain = fields.Binary(
+    pricelist_id_domain = fields.Json(
         compute="_compute_pricelist_id_domain", readonly=True, store=False
     )
     pricelist_id = fields.Many2one(
@@ -122,7 +122,7 @@ class ContractTemplate(models.Model):
     def _compute_pricelist_id_domain(self):
         for rec in self:
             rec.pricelist_id_domain = (
-                [("currency_id", "=", rec.journal_id.currency_id.id)]
+                [["currency_id", "=", rec.journal_id.currency_id.id]]
                 if rec.journal_id.currency_id
                 else []
             )
